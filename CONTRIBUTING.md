@@ -25,11 +25,11 @@ guide. A change to the detailed specification must trigger a review of the
 
 ## Immutability and versioning policy
 
-- EKA Standard **1.0.0 is immutable** — it is never edited in place.
+- EKA Standard **1.0 is immutable** — it is never edited in place.
 - Normative changes require a version bump per semantic versioning:
-  - **1.1.0** — backward-compatible normative changes (additive: new sections,
+  - **1.1** — backward-compatible normative changes (additive: new sections,
     clarifications, subordinate terms, additive rule definitions).
-  - **2.0.0** — breaking changes (amends invariants, changes verdict semantics,
+  - **2.0** — breaking changes (amends invariants, changes verdict semantics,
     redefines a canonical term, changes a naming pattern).
 - Foundations that never change: Identity, the global invariants, the
   two-change-channel separation, and the layer composition (KB + OS + EX).
