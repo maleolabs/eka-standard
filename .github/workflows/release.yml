@@ -1,0 +1,57 @@
+# Publishes the EKA Standard as a GitHub Release.
+#
+# Triggered by pushing a git tag matching v* (two-component scheme:
+# vMAJOR.MINOR — a standard has no patch line). The workflow:
+#   1. Extracts the version from the tag.
+#   2. Verifies version consistency: the "Version X.Y" line in the
+#      canonical `EKA` file must equal the tag (fail-closed otherwise —
+#      the distribution artifact must never drift from its tag).
+#   3. Creates a GitHub Release with `EKA` as the single distribution
+#      asset.
+#
+# The `EKA` asset is the canonical consumer reference. Consumers fetch it
+# by version:
+#   https://github.com/maleolabs/eka-standard/releases/latest/download/EKA
+#   https://github.com/maleolabs/eka-standard/releases/download/v1.0/EKA
+
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify version consistency
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          EKA_VERSION="$(grep -E '^Version ' EKA | head -1 | awk '{print $2}')"
+          echo "tag version:    $VERSION"
+          echo "EKA version:    $EKA_VERSION"
+          if [ -z "$EKA_VERSION" ]; then
+            echo "error: no 'Version X.Y' line found in the EKA file" >&2
+            exit 1
+          fi
+          if [ "$EKA_VERSION" != "$VERSION" ]; then
+            echo "error: tag v$VERSION does not match EKA Version $EKA_VERSION" >&2
+            exit 1
+          fi
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "v${GITHUB_REF_NAME#v}" \
+            --title "EKA Standard v${GITHUB_REF_NAME#v}" \
+            --generate-notes \
+            EKA
