@@ -2,8 +2,8 @@
 
 ## Versioned snapshot
 
-This specification is the versioned snapshot of the EKA Standard 1.0 — an
-immutable normative specification. Version 1.0 is frozen; it is never edited
+This specification is the versioned snapshot of the EKA Standard 1.1 — an
+immutable normative specification. Version 1.1 is frozen; it is never edited
 in place.
 
 ## Versioning rules (semantic)
@@ -19,7 +19,7 @@ in place.
 
 | Axis                        | Value                           | Notes                  |
 | --------------------------- | ------------------------------- | ---------------------- |
-| Standard corpus version     | 1.0                           | this specification     |
+| Standard corpus version     | 1.1                           | this specification     |
 | RSF serialization version   | "2"                             | serialization format   |
 | Representation identifiers  | eka/structured-json/1, eka/structured-text/1 | content representation |
 | Machine interface schema    | eka-cko-v2 (legacy eka-cko-v1)  | machine schema         |

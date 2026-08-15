@@ -6,7 +6,7 @@ knowledge taxonomies, the layer architecture, and exchange contracts between
 systems.
 
 This repository is the canonical specification/distribution repository of the
-EKA Standard, version **1.0**.
+EKA Standard, version **1.1**.
 
 ## Two-layer structure
 
@@ -28,13 +28,13 @@ The standard is organized into two layers:
 
 ## What the standard defines
 
-EKA Standard 1.0 is a documentation-only specification. It defines:
+EKA Standard 1.1 is a documentation-only specification. It defines:
 
 - the architectural principles (P1–P16);
 - the three-layer architecture (Knowledge, Operating, Exchange);
 - the Identity Model and the State Taxonomy;
 - the five Engineering Domains and Knowledge Stratification;
-- the 12 Knowledge Dimensions and 27 canonical tokens;
+- the 12 Knowledge Dimensions and 28 canonical tokens;
 - the Exchange Contract essentials;
 - the Conformance Rules R0–R13.
 
@@ -67,7 +67,7 @@ The following version axes are distinct and must not be conflated:
 
 | Axis | Value | Notes |
 |---|---|---|
-| Standard corpus version | **1.0** | the versioned snapshot in `specification/` |
+| Standard corpus version | **1.1** | the versioned snapshot in `specification/` |
 | RSF serialization format | `serializationVersion: "2"` | serialization format |
 | Representation identifiers | `eka/structured-json/1`, `eka/structured-text/1` | content representation |
 | Machine interface schema | `eka-cko-v2` (legacy: `eka-cko-v1`) | machine schema |
@@ -77,8 +77,8 @@ See `CHANGELOG.md` for the semantic changes across versions.
 ## Contributing
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md). Changes to the standard follow the
-immutability/versioning policy: version 1.0 is immutable; normative changes
-require a version bump (1.1 backward-compatible, 2.0 breaking). Design
+immutability/versioning policy: the current version is immutable; normative
+changes require a version bump (1.1 backward-compatible, 2.0 breaking). Design
 records and ADRs live in the EKA knowledge system, not in this repository.
 
 ## License

@@ -3,9 +3,9 @@
 ## Definition
 
 Every Artifact not in stratum 1 must have a resolvable derives-from/depends-on
-chain (direct or transitive) reaching a strictly higher stratum. Exempt: tkt-
-and ses- tokens, and draft knowledge artifacts. Stratification is a structural
-quality signal, never a commit blocker.
+chain (direct or transitive) reaching a strictly higher stratum. Exempt: tkt-,
+ses-, cmt-, and mbr- tokens, and draft knowledge artifacts. Stratification is a
+structural quality signal, never a commit blocker.
 
 ## Requirements
 
@@ -16,7 +16,7 @@ quality signal, never a commit blocker.
 
 ## Exceptions
 
-- Exempt: tkt- and ses- tokens, and draft knowledge artifacts.
+- Exempt: tkt-, ses-, cmt-, and mbr- tokens, and draft knowledge artifacts.
 
 ## Verdict
 

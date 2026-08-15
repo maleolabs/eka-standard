@@ -8,7 +8,7 @@ Release, Incident, Runbook, and similar) are Representation Aliases mapped onto
 a canonical token + Engineering Domain — never frontmatter type values, never
 Artifact types in their own right.
 
-The 27 canonical tokens. Each token maps to a Knowledge Dimension and an
+The 28 canonical tokens. Each token maps to a Knowledge Dimension and an
 Engineering Domain with its stratum. The Engineering Domain and stratum are
 derived from the token, never declared by an Artifact.
 
@@ -41,13 +41,14 @@ derived from the token, never declared by an Artifact.
 | spk-  | operating token (informational) | Execution          | 4       |
 | ses-  | operating token (informational) | Execution          | 4       |
 | cmt-  | operating token (informational) | Execution          | 4       |
+| mbr-  | operating token (informational) | Execution          | 4       |
 | run-  | operations                      | Operations         | 5       |
 | rel-  | records                         | Operations         | 5       |
 
 ## Operating tokens (shared explanation)
 
-The operating tokens (ctr-, tkt-, sto-, ts-, bug-, td-, ch-, spk-, ses-, cmt-)
-share "operating token (informational dimension)" semantics: they are
+The operating tokens (ctr-, tkt-, sto-, ts-, bug-, td-, ch-, spk-, ses-, cmt-,
+mbr-) share "operating token (informational dimension)" semantics: they are
 execution-side Artifacts that carry work through Protocol rather than durable
 knowledge. Each operating-token file records only its specific owned State and
 identity notes and references this section; the shared explanation is not
@@ -59,6 +60,10 @@ The cmt- (note) artifact type is the 27th token: owned State Vector (Content
 State, Existence State, Note State); IsKnowledge false. It carries the
 discusses relationship to a subject and the repliesTo relationship to its
 single parent note.
+
+The mbr- (member) artifact type is the 28th token: owned State Vector (Content
+State, Existence State); IsKnowledge false. It is the typed target of the
+assigned-to relationship carried by work items (see relationships.md).
 
 ## State Vector attribution
 
