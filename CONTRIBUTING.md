@@ -25,7 +25,7 @@ guide. A change to the detailed specification must trigger a review of the
 
 ## Immutability and versioning policy
 
-- EKA Standard **1.0 is immutable** — it is never edited in place.
+- EKA Standard **1.1 is immutable** — it is never edited in place.
 - Normative changes require a version bump per semantic versioning:
   - **1.1** — backward-compatible normative changes (additive: new sections,
     clarifications, subordinate terms, additive rule definitions).

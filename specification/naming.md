@@ -8,7 +8,7 @@ packageDigest, unitDigest, canonicalIdentityForm, instanceVersion).
 - **State Domain names:** contentState, executionState, planningState,
   containerState, existenceState; noteState (only note units carry it).
 - **Relationship type names:** dependsOn, derivesFrom, validates, supersedes,
-  amends; discusses, repliesTo.
+  amends; discusses, repliesTo, assignedTo.
 - **Content section keys:** derived from the section registry names
   deterministically — lowercase the first word, capitalize subsequent words,
   drop non-alphanumeric separators. Examples: "Alternatives Considered" →

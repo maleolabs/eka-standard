@@ -19,7 +19,7 @@ never silent merge. Validation before commit; revalidation after import.
 
 ## Serialization essentials
 
-- Standard corpus version: 1.0 (this specification).
+- Standard corpus version: 1.1 (this specification).
 - RSF serialization version: "2" (serializationVersion: "2"); versions "1.1"
   and "1" remain importable and are re-emitted as v2.
 - Representation identifiers: eka/structured-json/1 (JSON-native content
