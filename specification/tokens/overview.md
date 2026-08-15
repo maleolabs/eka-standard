@@ -54,7 +54,7 @@ knowledge. Each operating-token file records only its specific owned State and
 identity notes and references this section; the shared explanation is not
 repeated per file.
 
-## Note token (cmt-)
+## Note and member tokens
 
 The cmt- (note) artifact type is the 27th token: owned State Vector (Content
 State, Existence State, Note State); IsKnowledge false. It carries the

@@ -26,12 +26,13 @@ The gate additionally binds work items that carry an assigned-to relationship:
   a target of any other Artifact type is not conformant.
 - At-most-one target — assigned-to is single-assignee; a work item carrying
   more than one assigned-to relationship is not conformant.
-- Provenance equality — the target's provenance must equal the referring work
-  item's provenance; an assigned-to target originating outside the work item's
-  repository is not conformant.
+- Provenance — the assigned-to target must originate from the same repository
+  as the referring work item (repository-level provenance); an assigned-to
+  target originating outside the work item's repository is not conformant.
 
 The sub-check binds only work items carrying assigned-to: work items without
-the relationship are unaffected and produce no findings.
+the relationship are unaffected and produce no findings. The sub-check is
+evaluated when the gate applies (in-review/done).
 
 ## Verdict
 
