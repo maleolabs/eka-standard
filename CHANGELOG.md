@@ -2,6 +2,10 @@
 
 Semantic changes across versions of the EKA Standard.
 
+## 1.2
+
+- Add capture hooks (templates/hooks/pre-commit, pre-push) for ADR-035 universal capture (provenance human|inferred|reconciled, non-blocking POSIX hooks distributed via anvil platform_sync).
+
 ## 1.1
 
 - Add the mbr- token family (member line; Execution, stratum 4; state vector
