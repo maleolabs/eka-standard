@@ -2,6 +2,19 @@
 
 Semantic changes across versions of the EKA Standard.
 
+## 1.3
+
+- Add the shr- token family (sharing object; records; Operations, stratum 5;
+  state vector Content State + Existence State; IsKnowledge true). Required
+  fields: title/description (non-empty), level L0|L1|L2, provenance
+  extracted|audited (MVP: extracted only), sourceHash (pin source objectHash),
+  sourceRef (derives-from rel:versi). Snapshot copy + pin-hash at release;
+  no live depends-on. Opt-in levels L0-L2, default-deny (default share
+  nothing). Acuan: ADR sharing-object-model. Canonical token count 28 → 29.
+- Add the sharing-object relationship rules: shr- MUST carry derives-from to a
+  rel: version; MUST NOT carry a live depends-on to its source.
+  (specification/relationships.md).
+
 ## 1.2
 
 - Add capture hooks (templates/hooks/pre-commit, pre-push) for ADR-035 universal capture (provenance human|inferred|reconciled, non-blocking POSIX hooks distributed via anvil platform_sync).

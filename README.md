@@ -6,7 +6,7 @@ knowledge taxonomies, the layer architecture, and exchange contracts between
 systems.
 
 This repository is the canonical specification/distribution repository of the
-EKA Standard, version **1.2**.
+EKA Standard, version **1.3**.
 
 ## Two-layer structure
 
@@ -28,13 +28,13 @@ The standard is organized into two layers:
 
 ## What the standard defines
 
-EKA Standard 1.2 is a documentation-only specification. It defines:
+EKA Standard 1.3 is a documentation-only specification. It defines:
 
 - the architectural principles (P1–P16);
 - the three-layer architecture (Knowledge, Operating, Exchange);
 - the Identity Model and the State Taxonomy;
 - the five Engineering Domains and Knowledge Stratification;
-- the 12 Knowledge Dimensions and 28 canonical tokens;
+- the 12 Knowledge Dimensions and 29 canonical tokens;
 - the Exchange Contract essentials;
 - the Conformance Rules R0–R13.
 
@@ -67,7 +67,7 @@ The following version axes are distinct and must not be conflated:
 
 | Axis | Value | Notes |
 |---|---|---|
-| Standard corpus version | **1.2** | the versioned snapshot in `specification/` |
+| Standard corpus version | **1.3** | the versioned snapshot in `specification/` |
 | RSF serialization format | `serializationVersion: "2"` | serialization format |
 | Representation identifiers | `eka/structured-json/1`, `eka/structured-text/1` | content representation |
 | Machine interface schema | `eka-cko-v2` (legacy: `eka-cko-v1`) | machine schema |

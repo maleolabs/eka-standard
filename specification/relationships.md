@@ -21,6 +21,14 @@ expressed by Identity, never by location, display name, or classification.
   to its assigned member (mbr- line); at most ONE target
   (single-assignee).
 
+## Sharing object rules (shr-)
+
+- A sharing object (shr-) MUST carry `derives-from` to a `rel:` version
+  (`rel:<id>:<versi>`); versioning is per release.
+- A sharing object MUST NOT carry a live `depends-on` to its source.
+- `sourceHash` pins the source `objectHash` at release time (see
+  tokens/shr.md). Acuan: ADR sharing-object-model.
+
 ## Extensibility
 
 New Relationship types are lightweight extensions; packages using non-canonical

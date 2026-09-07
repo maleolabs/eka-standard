@@ -1,7 +1,7 @@
 # Operations (Stratum 5)
 
 - **Stratum:** 5 (lowest authority)
-- **Token families:** run-, rel-
+- **Token families:** run-, rel-, shr-
 - **Knowledge Dimensions:** operations, records
 
 ## Purpose
@@ -11,7 +11,8 @@ preserve what ran and how it runs.
 
 ## Produces
 
-Runbook/Operational Guide (run-), Release Record (rel-).
+Runbook/Operational Guide (run-), Release Record (rel-), Sharing Object
+(shr-; snapshot copy + pin-hash, see tokens/shr.md).
 
 ## Consumes
 
