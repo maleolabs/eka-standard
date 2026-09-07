@@ -13,10 +13,7 @@ in place. Versions 1.2 and earlier remain frozen.
   clarifications, subordinate terms, additive rule definitions). All existing
   conformant artifacts remain conformant.
 - **1.2** — backward-compatible additive: capture hooks (templates/hooks) for ADR-035 universal provenance distribution.
-- **1.3** — backward-compatible additive: shr- token family (sharing object;
-  records; Operations, stratum 5; IsKnowledge true; required fields
-  title/description/level/provenance/sourceHash/sourceRef; opt-in levels
-  L0–L2 default-deny; derives-from rel:versi, no live depends-on).
+- **1.3** — backward-compatible additive: shr- token family (see tokens/shr.md).
   Canonical token count 28 → 29. All existing conformant artifacts remain
   conformant.
 - **2.0** — breaking changes (amends invariants, changes verdict semantics,

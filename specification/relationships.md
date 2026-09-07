@@ -24,10 +24,10 @@ expressed by Identity, never by location, display name, or classification.
 ## Sharing object rules (shr-)
 
 - A sharing object (shr-) MUST carry `derives-from` to a `rel:` version
-  (`rel:<id>:<versi>`); versioning is per release.
+  (`rel:<id>:<v>`); versioning is per release.
 - A sharing object MUST NOT carry a live `depends-on` to its source.
 - `sourceHash` pins the source `objectHash` at release time (see
-  tokens/shr.md). Acuan: ADR sharing-object-model.
+  tokens/shr.md). Reference: `eka/adr:sharing-object-model:1`.
 
 ## Extensibility
 

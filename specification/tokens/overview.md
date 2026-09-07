@@ -66,10 +66,7 @@ The mbr- (member) artifact type is the 28th token: owned State Vector (Content
 State, Existence State); IsKnowledge false. It is the typed target of the
 assigned-to relationship carried by work items (see relationships.md).
 
-The shr- (sharing object) artifact type is the 29th token: owned State Vector
-(Content State, Existence State); IsKnowledge true. It is a snapshot copy
-derived from a source CKO at release time carrying level/provenance/
-title/description (see tokens/shr.md); never a live projection.
+The shr- (sharing object) artifact type is the 29th token (see tokens/shr.md).
 
 ## State Vector attribution
 
