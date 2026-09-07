@@ -69,7 +69,11 @@ identity.
 Work item = (Execution State, Existence State); plan = (Content State, Planning
 State, Existence State); Execution Container = (Container State, Existence
 State); ADR = (Content State, Existence State); note (cmt-) = (Content State,
-Existence State, Note State).
+Existence State, Note State); sharing object (shr-) = (Content State,
+Existence State), snapshot-derived.
+
+A builder release writes a shr- unit as Draft then Approved; after release
+there is no live mutation.
 
 ## Empty State Vector
 

@@ -2,6 +2,14 @@
 
 Semantic changes across versions of the EKA Standard.
 
+## 1.3
+
+- Add the shr- token family (see specification/tokens/shr.md). Reference:
+  `eka/adr:sharing-object-model:1`. Canonical token count 28 → 29.
+- Add the sharing-object relationship rules: shr- MUST carry derives-from to a
+  `rel:<id>:<v>`; MUST NOT carry a live depends-on to its source.
+  (specification/relationships.md).
+
 ## 1.2
 
 - Add capture hooks (templates/hooks/pre-commit, pre-push) for ADR-035 universal capture (provenance human|inferred|reconciled, non-blocking POSIX hooks distributed via anvil platform_sync).

@@ -8,7 +8,7 @@ Release, Incident, Runbook, and similar) are Representation Aliases mapped onto
 a canonical token + Engineering Domain — never frontmatter type values, never
 Artifact types in their own right.
 
-The 28 canonical tokens. Each token maps to a Knowledge Dimension and an
+The 29 canonical tokens. Each token maps to a Knowledge Dimension and an
 Engineering Domain with its stratum. The Engineering Domain and stratum are
 derived from the token, never declared by an Artifact.
 
@@ -44,6 +44,7 @@ derived from the token, never declared by an Artifact.
 | mbr-  | operating token (informational) | Execution          | 4       |
 | run-  | operations                      | Operations         | 5       |
 | rel-  | records                         | Operations         | 5       |
+| shr-  | records                         | Operations         | 5       |
 
 ## Operating tokens (shared explanation)
 
@@ -64,6 +65,8 @@ single parent note.
 The mbr- (member) artifact type is the 28th token: owned State Vector (Content
 State, Existence State); IsKnowledge false. It is the typed target of the
 assigned-to relationship carried by work items (see relationships.md).
+
+The shr- (sharing object) artifact type is the 29th token (see tokens/shr.md).
 
 ## State Vector attribution
 

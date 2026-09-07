@@ -35,6 +35,11 @@ data); a Manifest (ordered list of all units); zero or more Exchange Units;
 Declarations (Closure, External Reference, Extension); and integrity data.
 Deterministic ordering by canonical Identity key.
 
+## Sharing object self-containment
+
+A shr- unit is self-contained at release (snapshot + sourceHash); consumers
+resolve via sourceHash without the source repository.
+
 ## Determinism
 
 Identical repository state must produce identical packages (up to permissible
