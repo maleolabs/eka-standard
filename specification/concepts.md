@@ -139,8 +139,10 @@ governed by Protocol (Operating Layer).
 
 ### Execution Container
 
-An execution Artifact that wraps work items and carries a concurrency
-convention (exactly-one-active). Its State Domain: Container State.
+An execution Artifact that wraps work items and carries a scope-aware
+concurrency convention (one Active container per source_repo with
+disjoint transitive plan closures — parallel execution across
+repositories). Its State Domain: Container State.
 
 ### Phase
 
