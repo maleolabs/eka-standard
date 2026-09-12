@@ -46,7 +46,12 @@ changes = new instance (InstanceVersion).
 Values: Active → Completed. Responsibility: Execution Container open/closed;
 concurrency. Owner: Operating Layer. Completed is a derived transition,
 triggered by the Execution State aggregate (all work items Done);
-exactly-one-Active (mutual exclusion).
+scope-aware concurrency: one Active container per source_repo (the
+repository owning the container line), plus a no-dependency gate — the
+transitive depends-on/derives-from plan closure of an Activating
+container must be disjoint from the closure of every other Active
+container; a shared node refuses activation naming the shared plan/edge
+(parallel execution across repositories, dec:parallel-container-execution).
 
 ### Existence State
 
