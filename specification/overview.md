@@ -1,6 +1,6 @@
 # Overview
 
-This specification is the versioned snapshot of the EKA Standard 1.1. On any
+This specification is the versioned snapshot of the EKA Standard 1.3. On any
 conflict with companion documentation (README, changelog, contribution guide),
 this specification wins.
 
@@ -13,11 +13,11 @@ The word "must" denotes a binding requirement on all implementations. The word
 ### Name
 
 Engineering Knowledge Architecture (EKA). Official abbreviation: EKA
-(capitalized, no periods, no decoration). Versioned form: "EKA Standard 1.1".
+(capitalized, no periods, no decoration). Versioned form: "EKA Standard 1.3".
 
 ### Version
 
-1.1.
+1.3.
 
 ### Purpose
 

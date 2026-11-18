@@ -15,6 +15,10 @@ content, and missing required keys are structural violations.
   required identity fields.
 - Structural violations include: invalid encoding, malformed frontmatter,
   unknown top-level fields, non-object content, and missing required keys.
+- A malformed optional date field (`validUntil`, `lastConfirmed` — see the
+  exchange envelope) is a structural violation of the same class as a
+  malformed `created`. The field's value is never compared against a clock:
+  an artifact past its validity horizon is structurally well-formed.
 
 ## Verdict
 

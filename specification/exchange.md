@@ -19,13 +19,32 @@ never silent merge. Validation before commit; revalidation after import.
 
 ## Serialization essentials
 
-- Standard corpus version: 1.1 (this specification).
+- Standard corpus version: 1.3 (this specification).
 - RSF serialization version: "2" (serializationVersion: "2"); versions "1.1"
   and "1" remain importable and are re-emitted as v2.
 - Representation identifiers: eka/structured-json/1 (JSON-native content
   object); eka/structured-text/1 (legacy text content).
 - Machine interface schema: eka-cko-v2 (legacy: eka-cko-v1, no longer emitted).
 - Object hash: SHA-256(unit.json || content).
+
+## Envelope: validity horizon (optional)
+Two optional top-level fields record when knowledge stops being trustworthy:
+`validUntil` (the declared validity horizon) and `lastConfirmed` (when a human
+last asserted the content still holds). Both are absolute dates in
+`YYYY-MM-DD` form and both are absent by default.
+
+- An absent `validUntil` means **undeclared** — neither fresh nor stale. There
+  is no default horizon: a default would be a guess presented as knowledge.
+- `lastConfirmed` is not `updated`: the latter is the file modification time;
+  the former is an author-written assertion, never written automatically.
+- The fields are advisory. Their **shape** is structural — a malformed date is
+  a structural violation of the same class as a malformed `created` — but no
+  rule compares either value against a clock. Expiry never blocks, and a far
+  horizon is not more conformant than a near one.
+- Changing a horizon is an envelope change, so it requires a new revision.
+
+The rationale (why a date and not a duration, why advisory, why no defaults)
+is recorded in the freshness ADR and is not restated here.
 
 ## Package composition
 
