@@ -25,12 +25,15 @@ guide. A change to the detailed specification must trigger a review of the
 
 ## Immutability and versioning policy
 
-- EKA Standard **1.1 is immutable** — it is never edited in place.
-- Normative changes require a version bump per semantic versioning:
-  - **1.1** — backward-compatible normative changes (additive: new sections,
-    clarifications, subordinate terms, additive rule definitions).
-  - **2.0** — breaking changes (amends invariants, changes verdict semantics,
-    redefines a canonical term, changes a naming pattern).
+- The current version — the frozen snapshot named in
+  [`specification/versioning.md`](specification/versioning.md) — is immutable:
+  it is never edited in place. Freezing binds at that declaration, not at the
+  git tag.
+- A normative change to a frozen version requires a version bump: a
+  backward-compatible additive change takes the next minor, a breaking change
+  takes the next major. The per-version classes are stated in
+  `specification/versioning.md` and `CHANGELOG.md`; this guide does not restate
+  them.
 - Foundations that never change: Identity, the global invariants, the
   two-change-channel separation, and the layer composition (KB + OS + EX).
 

@@ -2,6 +2,17 @@
 
 Semantic changes across versions of the EKA Standard.
 
+## 1.4
+
+- Add scope-aware container concurrency (specification/concepts.md,
+  specification/state.md).
+- Add the validity horizon fields `validUntil` and `lastConfirmed`
+  (specification/exchange.md, specification/overview.md,
+  specification/rules/rule-001.md).
+- Add the provenance and capture envelope: `provenance`, `sourcePromptHash`,
+  `captureMeta`, `sourceCommitSha` (specification/exchange.md).
+- Add the exchange conformance corpus (conformance/exchange/).
+
 ## 1.3
 
 - Add the shr- token family (see specification/tokens/shr.md). Reference:
