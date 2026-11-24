@@ -2,9 +2,9 @@
 
 ## Versioned snapshot
 
-This specification is the versioned snapshot of the EKA Standard 1.6 — an
-immutable normative specification. Version 1.6 is frozen; it is never edited
-in place. Versions 1.5 and earlier remain frozen.
+This specification is the versioned snapshot of the EKA Standard 1.7 — an
+immutable normative specification. Version 1.7 is frozen; it is never edited
+in place. Versions 1.6 and earlier remain frozen.
 
 ## Versioning rules (semantic)
 
@@ -30,6 +30,12 @@ in place. Versions 1.5 and earlier remain frozen.
   declare for the changed set — non-blocking by default (blocking only when the
   operator sets the strict env var), so the universal-capture contract of 1.2 is
   preserved. All existing conformant artifacts remain conformant.
+- **1.7** — backward-compatible additive: the declared-checks content field
+  (`checks`), an array of `{command, scope}` objects by which a constraint
+  Artifact declares the checks that verify it, each resolved to the constraint
+  id that declared it; an Artifact that declares no `checks` is checklist-only
+  (specification/exchange.md, specification/concepts.md). All existing
+  conformant artifacts remain conformant.
 - **2.0** — breaking changes (amends invariants, changes verdict semantics,
   redefines a canonical term, changes a naming pattern).
 
@@ -42,7 +48,7 @@ The tag is a release convenience, not the freezing event.
 
 | Axis                        | Value                           | Notes                  |
 | --------------------------- | ------------------------------- | ---------------------- |
-| Standard corpus version     | 1.6                           | this specification     |
+| Standard corpus version     | 1.7                           | this specification     |
 | RSF serialization version   | "2"                             | serialization format   |
 | Representation identifiers  | eka/structured-json/1, eka/structured-text/1 | content representation |
 | Machine interface schema    | eka-cko-v2 (legacy eka-cko-v1)  | machine schema         |

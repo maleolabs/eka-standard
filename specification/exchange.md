@@ -19,7 +19,7 @@ never silent merge. Validation before commit; revalidation after import.
 
 ## Serialization essentials
 
-- Standard corpus version: 1.6 (this specification).
+- Standard corpus version: 1.7 (this specification).
 - RSF serialization version: "2" (serializationVersion: "2"); versions "1.1"
   and "1" remain importable and are re-emitted as v2.
 - Representation identifiers: eka/structured-json/1 (JSON-native content
@@ -148,6 +148,40 @@ of "which constraints must a change to this path satisfy".
   it must be reported, not ignored. A well-formed pattern that matches no path
   in the repository is a warning — a scope may be declared ahead of the code
   that will inhabit it.
+- Changing a declaration is a content change, so it requires a new revision
+  (the Content change channel, P10).
+
+## Content: declared checks (optional)
+
+A constraint Artifact may declare the checks that verify it through one
+optional content field, `checks` — the machine-answerable form of "how is this
+constraint enforced".
+
+- `checks` is an array of check objects. Each object carries a `command` (a
+  shell command run at the repository root) and a `scope` (an array of
+  repository-relative path patterns). `scope` uses the same glob grammar and
+  the same repository-root, forward-slash interpretation as `appliesTo`.
+- `command` must be a non-empty string. A check passes when the command exits
+  zero and fails when it exits non-zero; a failing check is a blocking
+  violation. The command reads the working tree and is given no arguments.
+- `scope` is the repository-relative set of paths the check is relevant to. An
+  empty `scope` — declared empty, or absent — matches nothing: the check is
+  relevant to no path, so under a changed-set filter it runs only when no
+  changed path is being filtered on. A scope that gates nothing in particular
+  must never silently gate everything.
+- The field is absent by default. An Artifact that declares no `checks` is
+  checklist-only: it is reported as such, never treated as enforced. Absence is
+  not a defect — most Artifacts are not mechanically checked.
+- A check resolves to the Artifact that declared it: a violation names the
+  constraint id (the canonical Identity form) of the declaring Artifact, so a
+  failing check is traceable to the standard it verifies. The constraint
+  families — std-, spec-, adr-, req- (see specification/tokens/) — are the
+  typical carriers; the field is not restricted by type.
+- A malformed `checks` declaration — a value that is not an array, an element
+  that is not an object, a missing, non-string or empty `command`, a `scope`
+  that is not an array, or a `scope` pattern that cannot be interpreted — is a
+  structural violation of the same class as a malformed `appliesTo`: it cannot
+  be read, so it is reported, not ignored.
 - Changing a declaration is a content change, so it requires a new revision
   (the Content change channel, P10).
 
