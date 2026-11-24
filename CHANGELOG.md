@@ -2,6 +2,13 @@
 
 Semantic changes across versions of the EKA Standard.
 
+## 1.5
+
+- Add the applicability declaration: the optional content field `appliesTo`,
+  binding a constraint Artifact to the paths or modules it applies to, with a
+  deterministic path-to-constraint retrieval and its validation classes
+  (specification/exchange.md, specification/concepts.md).
+
 ## 1.4
 
 - Add scope-aware container concurrency (specification/concepts.md,

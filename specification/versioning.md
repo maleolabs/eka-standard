@@ -2,9 +2,9 @@
 
 ## Versioned snapshot
 
-This specification is the versioned snapshot of the EKA Standard 1.4 — an
-immutable normative specification. Version 1.4 is frozen; it is never edited
-in place. Versions 1.3 and earlier remain frozen.
+This specification is the versioned snapshot of the EKA Standard 1.5 — an
+immutable normative specification. Version 1.5 is frozen; it is never edited
+in place. Versions 1.4 and earlier remain frozen.
 
 ## Versioning rules (semantic)
 
@@ -20,6 +20,10 @@ in place. Versions 1.3 and earlier remain frozen.
   the validity horizon fields `validUntil`/`lastConfirmed`; the provenance and
   capture envelope (`provenance`, `sourcePromptHash`, `captureMeta`,
   `sourceCommitSha`). All existing conformant artifacts remain conformant.
+- **1.5** — backward-compatible additive: the applicability declaration
+  (`appliesTo`), a content field binding a constraint Artifact to the paths or
+  modules it applies to (specification/exchange.md, specification/concepts.md).
+  All existing conformant artifacts remain conformant.
 - **2.0** — breaking changes (amends invariants, changes verdict semantics,
   redefines a canonical term, changes a naming pattern).
 
@@ -32,7 +36,7 @@ The tag is a release convenience, not the freezing event.
 
 | Axis                        | Value                           | Notes                  |
 | --------------------------- | ------------------------------- | ---------------------- |
-| Standard corpus version     | 1.4                           | this specification     |
+| Standard corpus version     | 1.5                           | this specification     |
 | RSF serialization version   | "2"                             | serialization format   |
 | Representation identifiers  | eka/structured-json/1, eka/structured-text/1 | content representation |
 | Machine interface schema    | eka-cko-v2 (legacy eka-cko-v1)  | machine schema         |
