@@ -19,7 +19,7 @@ never silent merge. Validation before commit; revalidation after import.
 
 ## Serialization essentials
 
-- Standard corpus version: 1.4 (this specification).
+- Standard corpus version: 1.5 (this specification).
 - RSF serialization version: "2" (serializationVersion: "2"); versions "1.1"
   and "1" remain importable and are re-emitted as v2.
 - Representation identifiers: eka/structured-json/1 (JSON-native content
@@ -118,6 +118,38 @@ last asserted the content still holds). Both are absolute dates in
 
 The rationale (why a date and not a duration, why advisory, why no defaults)
 is recorded in the freshness ADR and is not restated here.
+
+## Content: applicability declaration (optional)
+
+A knowledge Artifact may declare the paths or modules its constraint binds
+through one optional content field, `appliesTo` — the machine-answerable form
+of "which constraints must a change to this path satisfy".
+
+- `appliesTo` is an array of repository-relative path patterns. A pattern is a
+  literal path or a glob over path segments (`*` within one segment, `?` one
+  character, `**` across segments). Patterns are matched against paths relative
+  to the repository root, forward-slashed on every platform.
+- The field is absent by default. An Artifact that declares no `appliesTo`
+  binds no path: it is retrieved by identity, never by path. Absence is not a
+  defect — most Artifacts are not path-scoped.
+- The declaration is normative for retrieval and advisory for knowledge: it
+  does not by itself enforce anything, but a deterministic path-to-constraint
+  retrieval returns exactly the Artifacts whose declared scope matches a path —
+  the higher-authority constraints that bind it — ordered by authority stratum
+  and canonical Identity, one hop, with no similarity search. A path that
+  matches no declaration yields an empty set, never an error.
+- The constraint families — std-, spec-, adr-, req- (see
+  specification/tokens/) — are the typical carriers, because they are the
+  higher-authority knowledge a change must satisfy. The field is not restricted
+  by type: the constraint families are a retrieval convention, not a closed
+  set.
+- A malformed pattern (a value that is not a string, or a pattern that cannot
+  be interpreted) is a structural violation: the declaration cannot be read, so
+  it must be reported, not ignored. A well-formed pattern that matches no path
+  in the repository is a warning — a scope may be declared ahead of the code
+  that will inhabit it.
+- Changing a declaration is a content change, so it requires a new revision
+  (the Content change channel, P10).
 
 ## Package composition
 
