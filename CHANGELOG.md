@@ -2,6 +2,14 @@
 
 Semantic changes across versions of the EKA Standard.
 
+## 1.6
+
+- Add the standard check gate to the distributed hooks: `templates/hooks/pre-commit`
+  and `templates/hooks/pre-push` now invoke `eka verify --changed` (the
+  repository-scope checks the standards declare for the changed set), non-blocking
+  by default so the universal-capture contract is preserved
+  (sto:verify-changed-gate, M3a stage B).
+
 ## 1.5
 
 - Add the applicability declaration: the optional content field `appliesTo`,
