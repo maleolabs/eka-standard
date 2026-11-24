@@ -134,6 +134,15 @@ does this knowledge apply to": the constraints that bind a given path can be
 retrieved deterministically, without reading every Artifact. Absent by default;
 see exchange.md.
 
+### Declared Check
+
+An optional content field (`checks`) by which a constraint Artifact declares the
+commands that verify it, each scoped to the repository-relative paths it is
+relevant to. A check resolves to the Artifact that declared it, so a failing
+check names the standard it verifies; an Artifact that declares no checks is
+checklist-only, reported as such, never treated as enforced. Absent by
+default; see exchange.md.
+
 ### Gate
 
 A condition that must be satisfied before a transition or execution may occur

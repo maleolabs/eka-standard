@@ -2,6 +2,14 @@
 
 Semantic changes across versions of the EKA Standard.
 
+## 1.7
+
+- Add the declared-checks content field: a constraint Artifact may declare
+  `checks` — an array of `{command, scope}` objects — that the repository gate
+  runs at the repository root, resolving each check to the constraint id that
+  declared it; an Artifact that declares no checks is reported as checklist-only
+  (specification/exchange.md, specification/concepts.md).
+
 ## 1.6
 
 - Add the standard check gate to the distributed hooks: `templates/hooks/pre-commit`
