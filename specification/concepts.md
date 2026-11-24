@@ -126,6 +126,14 @@ systems).
 An explicit relation between Artifacts referenced by Identity. See
 relationships.md.
 
+### Applicability Declaration
+
+An optional content field (`appliesTo`) by which an Artifact declares the paths
+or modules its constraint binds. It is the machine-answerable form of "what
+does this knowledge apply to": the constraints that bind a given path can be
+retrieved deterministically, without reading every Artifact. Absent by default;
+see exchange.md.
+
 ### Gate
 
 A condition that must be satisfied before a transition or execution may occur
