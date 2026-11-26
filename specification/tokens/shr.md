@@ -38,7 +38,7 @@ The level is selected explicitly per release. Default share nothing: without an 
 - MUST carry `derives-from` to a `rel:` version (`rel:<id>:<v>`).
 - MUST NOT carry a live `depends-on` to the source.
 - A new release is a new instance (InstanceVersion pointing to a different instance) with a new `derives-from`.
-- R10 note: shr- SHOULD carry transitive upward trace to the source's higher-stratum anchor where known (a derives-from chain reaching a strictly higher stratum); the R10 verdict is warning per rule-011, never a commit blocker; shr- is not in the exempt list (exempt: tkt-, ses-, cmt-, mbr- + drafts).
+- R10 note: shr- SHOULD carry transitive upward trace to the source's higher-stratum anchor where known (a derives-from chain reaching a strictly higher stratum); the R10 verdict is warning per rule-011, never a commit blocker; shr- is not in the exempt list (exempt: tkt-, ses-, cmt-, mbr- (deprecated, read-only) + drafts).
 
 ## Snapshot + pin-hash
 

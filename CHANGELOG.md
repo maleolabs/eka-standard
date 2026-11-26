@@ -2,6 +2,26 @@
 
 Semantic changes across versions of the EKA Standard.
 
+## 2.0
+
+- Deprecate in place the member/work-ownership model. The `mbr-` token and the
+  `assigned-to` relationship become READ-ONLY: no new `mbr-` line and no new
+  `assigned-to` edge may be authored; existing instances remain recognized and
+  resolvable on read (specification/tokens/mbr.md,
+  specification/relationships.md). Removal is deferred one major — `mbr-` and
+  `assigned-to` are removed in 3.0.
+- Remove the member-scoped projections (member board, `view --member`, assignee
+  keys).
+- Retain attribution and provenance unchanged.
+- Extend rule R13 (rule-014.md): the conditional member sub-check becomes a
+  data-integrity check over read-only `assigned-to` edges (typed target,
+  at-most-one target, provenance equality); it no longer frames new assignment.
+- Extend rule R10 (rule-011.md): the exemption list keeps `mbr-` as a
+  deprecated, read-only token.
+- No RSF change: `serializationVersion` (`"2"`), the representation identifiers
+  (`eka/structured-json/1`, `eka/structured-text/1`), and the machine interface
+  schema (`eka-cko-v2`) are unchanged.
+
 ## 1.7
 
 - Add the declared-checks content field: a constraint Artifact may declare
