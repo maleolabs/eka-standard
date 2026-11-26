@@ -1,7 +1,7 @@
 # Execution (Stratum 4)
 
 - **Stratum:** 4
-- **Token families:** rvw-, ctr-, tkt-, sto-, ts-, bug-, td-, ch-, spk-, ses-, cmt-, mbr-
+- **Token families:** rvw-, ctr-, tkt-, sto-, ts-, bug-, td-, ch-, spk-, ses-, cmt-, mbr- (deprecated, read-only)
 - **Knowledge Dimensions:** quality + operating tokens
 
 ## Purpose
@@ -12,7 +12,8 @@ sessions, notes, and members that carry work through Protocol.
 ## Produces
 
 Review (rvw-), Execution Container (ctr-), Ticket (tkt-), Work Items (sto-,
-ts-, bug-, td-, ch-, spk-), Session (ses-), Note (cmt-), Member (mbr-).
+ts-, bug-, td-, ch-, spk-), Session (ses-), Note (cmt-), Member (mbr-,
+deprecated read-only).
 
 ## Consumes
 

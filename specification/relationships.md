@@ -12,14 +12,20 @@ expressed by Identity, never by location, display name, or classification.
 - **depends-on** — the referring artifact depends on the target.
 - **validates** — the referring artifact validates the target.
 
-## Three additional Relationship types
+## Two additional Relationship types
 
 - **discusses** — a note (cmt-) points to its subject.
 - **repliesTo** — a reply note attaches to exactly ONE parent note
   (single-parent, never nested).
-- **assigned-to** — a work item (sto-, ts-, bug-, td-, ch-, spk-) points
-  to its assigned member (mbr- line); at most ONE target
-  (single-assignee).
+
+## Deprecated relationship: assigned-to
+
+- **assigned-to** — a work item (sto-, ts-, bug-, td-, ch-, spk-) pointed to
+  its assigned member (mbr- line); at most ONE target (single-assignee).
+  **Deprecated in 2.0, READ-ONLY**: no new assigned-to edge may be authored;
+  existing edges remain recognized and resolvable on read only. Removal is
+  deferred one major — assigned-to is removed in 3.0. The member-scoped
+  projections (member board, `view --member`, assignee keys) are removed.
 
 ## Sharing object rules (shr-)
 

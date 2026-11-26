@@ -41,7 +41,7 @@ derived from the token, never declared by an Artifact.
 | spk-  | operating token (informational) | Execution          | 4       |
 | ses-  | operating token (informational) | Execution          | 4       |
 | cmt-  | operating token (informational) | Execution          | 4       |
-| mbr-  | operating token (informational) | Execution          | 4       |
+| mbr-  | operating token (informational, deprecated) | Execution          | 4       |
 | run-  | operations                      | Operations         | 5       |
 | rel-  | records                         | Operations         | 5       |
 | shr-  | records                         | Operations         | 5       |
@@ -63,8 +63,13 @@ discusses relationship to a subject and the repliesTo relationship to its
 single parent note.
 
 The mbr- (member) artifact type is the 28th token: owned State Vector (Content
-State, Existence State); IsKnowledge false. It is the typed target of the
-assigned-to relationship carried by work items (see relationships.md).
+State, Existence State); IsKnowledge false. DEPRECATED in 2.0, READ-ONLY: no
+new mbr- line is authored, and it is no longer the typed target of new
+assigned-to edges; existing lines and edges remain recognized on read. It was
+the typed target of the assigned-to relationship carried by work items (see
+relationships.md). Removal is deferred one major — mbr- and assigned-to are
+removed in 3.0. Member-scoped projections (member board, `view --member`,
+assignee keys) are removed.
 
 The shr- (sharing object) artifact type is the 29th token (see tokens/shr.md).
 

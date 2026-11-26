@@ -24,7 +24,7 @@ one stratum.
 | Discovery    | 1       | vis-, str-, req-, fnd-                  | intent, requirements, research                      |
 | Architecture | 2       | arc-, adr-, dec-, spec-, std-, gls-     | architecture, decisions, specifications, standards, vocabulary |
 | Planning     | 3       | scp-, epc-, plan-, trc-                 | planning                                            |
-| Execution    | 4       | rvw-, ctr-, tkt-, sto-, ts-, bug-, td-, ch-, spk-, ses-, cmt-, mbr- | quality + operating tokens          |
+| Execution    | 4       | rvw-, ctr-, tkt-, sto-, ts-, bug-, td-, ch-, spk-, ses-, cmt-, mbr- (deprecated, read-only) | quality + operating tokens          |
 | Operations   | 5       | run-, rel-, shr-                        | operations, records                                 |
 
 ## Stratum Authority Invariant

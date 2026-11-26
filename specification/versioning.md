@@ -2,9 +2,9 @@
 
 ## Versioned snapshot
 
-This specification is the versioned snapshot of the EKA Standard 1.7 — an
-immutable normative specification. Version 1.7 is frozen; it is never edited
-in place. Versions 1.6 and earlier remain frozen.
+This specification is the versioned snapshot of the EKA Standard 2.0 — an
+immutable normative specification. Version 2.0 is frozen; it is never edited
+in place. Versions 1.7 and earlier remain frozen.
 
 ## Versioning rules (semantic)
 
@@ -36,19 +36,38 @@ in place. Versions 1.6 and earlier remain frozen.
   id that declared it; an Artifact that declares no `checks` is checklist-only
   (specification/exchange.md, specification/concepts.md). All existing
   conformant artifacts remain conformant.
-- **2.0** — breaking changes (amends invariants, changes verdict semantics,
-  redefines a canonical term, changes a naming pattern).
+- **2.0** — breaking: deprecation in place of the member/work-ownership model.
+  The `mbr-` token and the `assigned-to` relationship become READ-ONLY: no new
+  `mbr-` line and no new `assigned-to` edge may be authored; existing instances
+  remain recognized and resolvable on read. The member-scoped projections
+  (member board, `view --member`, assignee keys) are removed. Attribution and
+  provenance are retained. Removal is deferred one major: `mbr-` and
+  `assigned-to` are removed in 3.0. Amends invariants? No — the invariant set is
+  preserved; what changes is authoring surface. RSF `serializationVersion`,
+  representation identifiers, and the machine interface schema are unchanged.
 
 Freezing binds at the declaration, not at the git tag: once this document names
 a version as the frozen snapshot, a further normative change — including
 documenting an already-implemented optional field — belongs to the next version.
 The tag is a release convenience, not the freezing event.
 
+## Deprecation in place
+
+A normative removal is not the same as a breaking removal. When the standard
+retires an authoring surface, it deprecates in place: the construct is
+documented deprecated and becomes READ-ONLY — recognized, resolvable, and
+validated on read, but never newly authored. A deprecation in place is a
+breaking version bump because the authoring contract changes, while every
+existing conformant artifact remains conformant. The deprecated construct stays
+recognized for one major after the deprecation, then is removed; the version
+that removes it is a further breaking bump. This clause governs the 2.0
+deprecation of `mbr-` and `assigned-to` (removed in 3.0).
+
 ## Distinct version axes (must not be conflated)
 
 | Axis                        | Value                           | Notes                  |
 | --------------------------- | ------------------------------- | ---------------------- |
-| Standard corpus version     | 1.7                           | this specification     |
+| Standard corpus version     | 2.0                           | this specification     |
 | RSF serialization version   | "2"                             | serialization format   |
 | Representation identifiers  | eka/structured-json/1, eka/structured-text/1 | content representation |
 | Machine interface schema    | eka-cko-v2 (legacy eka-cko-v1)  | machine schema         |
